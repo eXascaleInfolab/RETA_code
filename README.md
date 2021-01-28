@@ -53,21 +53,37 @@ python main.py --indir data/humans_wikidata --withTypes True --epochs 3000 --bat
 
 ###### Parameter setting:
 In `main.py`, you can set:
+
 `--indir`: input file directory
+
 `--withTypes`: True trains RETA, False trains RETA no type
+
 `--epochs`: number of training epochs
+
 `--batchsize`: batch size of training set
+
 `--num_filters`: number of filters used in the CNN
+
 `--embsize`: embedding size
+
 `--load`: load a pre-trained RETA model and evaluate
+
 `--learningrate`: learning rate
+
 `--outdir`: where to store RETA model
+
 `--num_negative_samples`: number of negative samples
+
 `--gpu_ids`: gpu to be used for train and test the model
+
 `--atLeast`: beta parameter
+
 `--topNfilters`: alpha parameter
+
 `--buildTypeDictionaries`: store dictionaries to speed-up the code
+
 `--sparsifier`: top-k types for each entity
+
 `--entitiesEvaluated`: both (evaluate facts where both h and t have types), one (evaluate facts where either h or t have types), none (evaluate facts where both h and t don't have types). In our paper we have computed the weighted average between these three settings.
 
 # Reference
