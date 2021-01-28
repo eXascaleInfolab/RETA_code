@@ -3,10 +3,7 @@
 RETA (as it suggests the Relation and Tail for a given head entity) is an end-to-end solution tackling instance completion problem over KGs. It consists of two components: a RETA-Filter and RETA-Grader. More precisely, our RETA-Filter first generates candidate relation-tail pairs for a given head by extracting and leveraging the schema of a KG; our RETA-Grader then evaluates and ranks the candidate relation-tail pairs considering the plausibility of both the candidate triplet and its corresponding schema using a newly-designed KG embedding model.
 ​
 ## How to run the code
-###### Datasets link
-```
-http://bit.ly/3t2WFTE
-```
+###### Datasets link: http://bit.ly/3t2WFTE
 
 
 
