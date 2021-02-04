@@ -5,21 +5,7 @@ RETA (as it suggests the Relation and Tail for a given head entity) is an end-to
 ## How to run the code
 ###### Datasets link: http://bit.ly/3t2WFTE
 
-
-
-###### Data preprocessing
-```
-python build_dataset.py --indir FB15k --atLeast 1000
-python build_dataset.py --indir JF17k --atLeast 1000
-
-python builddata.py --data_dir data/FB15k/
-python builddata.py --data_dir data/JF17k/
-```
-
-
-
-
-###### Train and Evaluate JF17k
+###### Train and Evaluate JF17k (use the pre-processed dataset: http://bit.ly/3tksFCK)
 ```
 python main.py --indir data/JF17k --withTypes True --epochs 3000 --batchsize 128 --num_filters 50 --embsize 100 --learningrate 0.0002 --outdir data/JF17k --gpu_ids 0 --num_negative_samples 1 --buildTypeDictionaries True --sparsifier 1
 
@@ -30,7 +16,7 @@ python main.py --indir data/JF17k --withTypes True --epochs 3000 --batchsize 128
 python main.py --indir data/JF17k --withTypes True --epochs 3000 --batchsize 128 --num_filters 50 --embsize 100 --learningrate 0.0002 --outdir data/JF17k/RETA_batchSize128_epoch3000_embSize100_lr0.0002_sparsifier1_numFilters50 --load True --gpu_ids 3 --num_negative_samples 1 --atLeast 2 --topNfilters -10 --buildTypeDictionaries True --sparsifier 1 --entitiesEvaluated none
 ```
 
-###### Evaluate FB15k
+###### Train and Evaluate FB15k (use the pre-processed dataset: http://bit.ly/3cHacuq)
 ```
 python main.py --indir data/FB15k --withTypes True --epochs 200 --batchsize 128 --num_filters 200 --embsize 100 --learningrate 0.0002 --outdir data/FB15k --gpu_ids 7 --num_negative_samples 1 --buildTypeDictionaries True --sparsifier 1
 
@@ -41,7 +27,7 @@ python main.py --indir data/FB15k --withTypes True --epochs 200 --batchsize 128 
 python main.py --indir data/FB15k --withTypes True --epochs 200 --batchsize 128 --num_filters 200 --embsize 100 --learningrate 0.0002 --outdir data/FB15k/RETA_batchSize128_epoch200_embSize100_lr0.0002_sparsifier1_numFilters200 --load True --gpu_ids 3 --num_negative_samples 1 --atLeast 2 --topNfilters -10 --buildTypeDictionaries True --sparsifier 1 --entitiesEvaluated none
 ```
 
-###### Evaluate humans_wikidata (use the pre-processed dataset: http://bit.ly/2M1S1ER)
+###### Train and Evaluate humans_wikidata (use the pre-processed dataset: http://bit.ly/2M1S1ER)
 
 ```
 python main.py --indir data/humans_wikidata --withTypes True --epochs 3000 --batchsize 128 --num_filters 100 --embsize 100 --learningrate 0.0002 --outdir data/humans_wikidata --gpu_ids 2 --num_negative_samples 1 --buildTypeDictionaries True --sparsifier 4
@@ -85,6 +71,12 @@ In `main.py`, you can set:
 `--sparsifier`: top-k types for each entity
 
 `--entitiesEvaluated`: both (evaluate facts where both h and t have types), one (evaluate facts where either h or t have types), none (evaluate facts where both h and t don't have types). In our paper we have computed the weighted average between these three settings.
+
+###### Data preprocessing example
+```
+python build_dataset.py --indir FB15k --atLeast 1000
+python builddata.py --data_dir data/FB15k/
+```
 
 # Reference
 If you use our code or datasets, please cite:
