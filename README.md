@@ -81,5 +81,5 @@ python builddata.py --data_dir data/FB15k/
 # Reference
 If you use our code or datasets, please cite:
 ```
-Rosso, P., Ostapuk, N., Yang, D., Cudré-Mauroux, P. (2021, April). RETA: A Schema-Aware, End-to-End Solution for Instance Completion in Knowledge Graphs. In Proceedings of The Web Conference 2021.
+Rosso, P., Yang, D., Ostapuk, N., Cudré-Mauroux, P. (2021, April). RETA: A Schema-Aware, End-to-End Solution for Instance Completion in Knowledge Graphs. In Proceedings of The Web Conference 2021.
 ```
