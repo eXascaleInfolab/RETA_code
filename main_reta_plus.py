@@ -1530,7 +1530,8 @@ def main():
 					candidate_size_both = candidate_size_both+len(filtered_relation_tail_pairs)/len(head2relation2tails_both)
 
 				if len(filtered_relation_tail_pairs)>100*3000: # cache negative sample candidates, for quick batch with the expense of more RAM (we have 128GB RAM)
-					rand_indices = np.random.randint(0, len(filtered_relation_tail_pairs), 100*3000)
+					rand_indices = np.random.permutation(len(filtered_relation_tail_pairs))
+					rand_indices = rand_indices[:300*1000]
 					sampled_pairs = filtered_relation_tail_pairs[rand_indices]
 				else:
 					sampled_pairs = filtered_relation_tail_pairs
